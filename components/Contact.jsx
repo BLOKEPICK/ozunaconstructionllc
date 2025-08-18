@@ -5,6 +5,7 @@ import { Mail, Phone } from "lucide-react";
 import { COMPANY, SERVICES } from "./constants";
 
 export default function Contact() {
+  const mailtoHref = `mailto:${COMPANY.email || 'ozunaconstructionllc@gmail.com'}`;
   function onSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -91,7 +92,7 @@ export default function Contact() {
                   <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
                   WhatsApp
                 </a>
-                <a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Email us">
+                <a href={mailtoHref} onClick={(e)=>{e.preventDefault(); window.location.href = mailtoHref;}} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Email us">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                   Email
                 </a>
