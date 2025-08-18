@@ -13,8 +13,16 @@ const ICONS = {
 
 export default function Services() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-20 md:py-24 bg-white">
+    <section id="services" aria-labelledby="services-heading" className="relative bg-slate-50 py-20 md:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-4">
+        {/* Background layers (decorative) */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10
+          bg-[linear-gradient(rgba(148,163,184,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.10)_1px,transparent_1px)]
+          bg-[size:22px_22px]" />
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10
+          bg-[radial-gradient(closest-side,rgba(16,185,129,0.08),transparent)]
+          [mask-image:linear-gradient(to_bottom,transparent,black,black,transparent)]" />
+    
         <header className="max-w-2xl">
           <h2 id="services-heading" className="text-2xl md:text-3xl font-bold tracking-tight">Services</h2>
           <p className="mt-2 text-slate-600">
