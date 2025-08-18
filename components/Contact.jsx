@@ -78,7 +78,7 @@ function handleEmailClick() {
                 
               <div>
                 <label htmlFor="service" className="text-sm font-medium text-slate-700">Service</label>
-                <div className="relative mt-1 z-20">
+                <div className="relative mt-1 z-20 text-slate-900">
                   {/* Hidden input to submit the chosen value */}
                   <input type="hidden" id="service" name="service" value={serviceValue} />
                   <button
@@ -94,16 +94,14 @@ function handleEmailClick() {
                   </button>
                   {serviceOpen ? (
                     <ul
-                      id="service-listbox"
-                      role="listbox"
-                      className="absolute left-0 right-0 top-full mt-2 max-h-60 overflow-auto rounded-xl border border-slate-200 bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+                      id="service-listbox" role="listbox" className="absolute bg-white border border-slate-200 focus:outline-none left-0 max-h-60 mt-2 overflow-auto right-0 ring-1 ring-black/5 rounded-xl shadow-lg text-slate-900 top-full z-50"
                     >
                       {OPTIONS.map((opt) => (
                         <li
                           key={opt}
                           role="option"
                           aria-selected={serviceValue === opt}
-                          className={"px-3 py-2 cursor-pointer hover:bg-slate-100 " + (serviceValue === opt ? "bg-slate-50" : "")}
+                          className={"px-3 py-2 cursor-pointer text-slate-900 hover:bg-slate-100 " + (serviceValue === opt ? "bg-slate-50" : "")}
                           onClick={() => { setServiceValue(opt); setServiceOpen(false); }}
                         >
                           {opt}
