@@ -6,8 +6,7 @@ import { COMPANY, SERVICES } from "./constants";
 
 export default function Contact() {
   const email = COMPANY.email || 'ozunaconstructionllc@gmail.com';
-  const mailtoHref = `mailto:${email}`;
-  function handleEmailClick() {
+function handleEmailClick() {
     // Do not preventDefault: allow native mailto first
     const isMobile = /Mobi|Android/i.test(navigator.userAgent);
     if (isMobile) return; // mobile handles mailto fine
