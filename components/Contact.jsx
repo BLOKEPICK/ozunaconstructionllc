@@ -72,12 +72,14 @@ function handleEmailClick() {
               </div>
               <div>
                 <label htmlFor="service" className="text-sm font-medium text-slate-700">Service</label>
+                <div className="relative z-20">
                 <select id="service" name="service"
-                  className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  className="bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 h-11 mt-1 px-3 py-2 rounded-xl text-base text-slate-900 w-full">
                   {[...SERVICES.map(s => s.title), "Other question"].map((label) => (
                     <option key={label} value={label}>{label}</option>
                   ))}
                 </select>
+                </div>
               </div>
               <div>
                 <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
