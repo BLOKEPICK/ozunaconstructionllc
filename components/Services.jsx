@@ -22,11 +22,11 @@ export default function Services() {
           </p>
         </header>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {SERVICES.map((s) => {
             const Icon = ICONS[s.slug] || Hammer;
             return (
-              <article key={s.slug} className="group relative rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+              <article key={s.slug} className="group relative h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
                 <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(closest-side,rgba(16,185,129,0.08),transparent)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" aria-hidden />
                 <div className="p-5">
                   <div className="inline-flex items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 ring-1 ring-emerald-500/20 w-11 h-11">
