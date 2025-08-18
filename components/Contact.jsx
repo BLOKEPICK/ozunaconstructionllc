@@ -26,23 +26,23 @@ export default function Contact() {
         <form onSubmit={onSubmit} className="bg-white text-slate-900 rounded-2xl p-6 shadow-xl">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-sm font-medium">Nombre</label>
-              <input name="name" required placeholder="Tu nombre" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
+              <label className="text-sm font-medium">Name</label>
+              <input name="name" required placeholder="Your name" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
             <div>
-              <label className="text-sm font-medium">Teléfono</label>
+              <label className="text-sm font-medium">Phone</label>
               <input name="phone" required placeholder="(614) ..." className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
             <div>
               <label className="text-sm font-medium">Email</label>
-              <input type="email" name="email" placeholder="tu@email.com" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
+              <input type="email" name="email" placeholder="you@example.com" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
             <div>
-              <label className="text-sm font-medium">Servicio</label>
+              <label className="text-sm font-medium">Service</label>
               <select name="service" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2">
                 {SERVICES.map((s) => (<option key={s.slug} value={s.title}>{s.title}</option>))}
               </select></div>
             <div className="sm:col-span-2">
-              <label className="text-sm font-medium">Mensaje</label>
+              <label className="text-sm font-medium">Message</label>
               <textarea name="message" rows={4} placeholder="Cuéntanos brevemente tu proyecto" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div></div>
-          <button type="submit" className="mt-4 w-full rounded-xl bg-slate-900 text-white font-semibold py-3 hover:bg-slate-800">Enviar</button>
+          <button type="submit" className="mt-4 w-full rounded-xl bg-slate-900 text-white font-semibold py-3 hover:bg-slate-800">Send</button>
           <p className="mt-3 text-xs text-slate-500">Al enviar, se abrirá tu cliente de correo con los datos prellenados.</p></form></div></section>
   );
 }
