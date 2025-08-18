@@ -1,6 +1,5 @@
 // Home composition
 "use client";
-import { event as gaEvent } from "../lib/gtag";
 import React from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -45,7 +44,6 @@ export default function HomePage() {
       <FAQ />
       <Contact />
       <Footer />
-      <StickyCTA />
-    </main>
+      <StickyCTA /></main>
   );
 }

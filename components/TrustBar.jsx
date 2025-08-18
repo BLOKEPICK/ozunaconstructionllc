@@ -14,11 +14,8 @@ export default function TrustBar() {
           {items.map((it, i) => (
             <div key={i} className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-3 px-3">
               <it.icon className="w-5 h-5 text-emerald-600" />
-              <span className="text-sm font-semibold text-slate-700">{it.label}</span>
-            </div>
+              <span className="text-sm font-semibold text-slate-700">{it.label}</span></div>
           ))}
-        </div>
-      </div>
-    </section>
+        </div></div></section>
   );
 }

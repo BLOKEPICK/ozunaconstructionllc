@@ -17,14 +17,10 @@ export default function Process() {
           {steps.map((s, i) => (
             <div key={i} className="rounded-2xl bg-white border border-slate-200 p-5 text-center">
               <div className="mx-auto w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 grid place-items-center mb-3">
-                <s.icon className="w-5 h-5" />
-              </div>
+                <s.icon className="w-5 h-5" /></div>
               <h3 className="font-semibold text-slate-900">{s.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
-            </div>
+              <p className="mt-2 text-sm text-slate-600">{s.desc}</p></div>
           ))}
-        </div>
-      </div>
-    </section>
+        </div></div></section>
   );
 }

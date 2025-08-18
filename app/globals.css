@@ -7,5 +7,3 @@ body {
 }
 
 html { scroll-behavior: smooth; }
-
-*:focus-visible{outline:2px solid #334155;outline-offset:2px}
