@@ -91,9 +91,9 @@ export default function Contact() {
                   <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
                   WhatsApp
                 </a>
-                <a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" aria-label="Email us">
+                <a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Email us">
                   <Mail className="w-5 h-5" aria-hidden="true" />
-                  Email
+                  <span className="truncate max-w-[14ch] sm:max-w-[20ch]">{COMPANY.email || "Email us"}</span>
                 </a>
               </div>
               <div className="text-xs text-slate-500">
