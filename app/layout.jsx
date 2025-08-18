@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Ozuna Construction LLC | Roofing, Siding, Framing & Remodeling in Columbus, OH",
+  icons: { icon: "/favicon.ico", apple: "/apple-icon.png" }, title: "Ozuna Construction LLC | Roofing, Siding, Framing & Remodeling in Columbus, OH",
   description: "Licensed & insured contractor in Columbus, OH. Roofing, siding, framing, carpentry and remodeling. Free estimates. 10+ years of experience. Warranty on labor.",
   metadataBase: new URL("https://ozunaconstructionllc.vercel.app"),
   openGraph: {
