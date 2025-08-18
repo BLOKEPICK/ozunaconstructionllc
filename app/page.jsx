@@ -12,7 +12,6 @@ import Areas from "../components/Areas";
 import FAQ from "../components/FAQ";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import StickyCTA from "../components/StickyCTA";
 import { COMPANY, AREAS } from "../components/constants";
 
 export default function HomePage() {
@@ -44,8 +43,6 @@ export default function HomePage() {
       <FAQ />
       <Contact />
       <Footer />
-      <StickyCTA />
-  
-</main>
+      </main>
   );
 }

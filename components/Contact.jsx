@@ -1,10 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Mail, Phone } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { COMPANY, SERVICES } from "./constants";
 
 export default function Contact() {
+  const OPTIONS = [...SERVICES.map(s => s.title), "Other question"];
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [serviceValue, setServiceValue] = useState(OPTIONS[0]);
   const email = COMPANY.email || 'ozunaconstructionllc@gmail.com';
 function handleEmailClick() {
     // Do not preventDefault: allow native mailto first
@@ -71,15 +75,45 @@ function handleEmailClick() {
                 </div>
               </div>
               <div>
+                
+              <div>
                 <label htmlFor="service" className="text-sm font-medium text-slate-700">Service</label>
-                <div className="relative z-20">
-                <select id="service" name="service"
-                  className="bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 h-11 mt-1 px-3 py-2 rounded-xl text-base text-slate-900 w-full">
-                  {[...SERVICES.map(s => s.title), "Other question"].map((label) => (
-                    <option key={label} value={label}>{label}</option>
-                  ))}
-                </select>
+                <div className="relative mt-1 z-20">
+                  {/* Hidden input to submit the chosen value */}
+                  <input type="hidden" id="service" name="service" value={serviceValue} />
+                  <button
+                    type="button"
+                    className="w-full h-11 rounded-xl border border-slate-300 px-3 py-2 text-left text-slate-900 bg-white flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    aria-haspopup="listbox"
+                    aria-expanded={serviceOpen}
+                    aria-controls="service-listbox"
+                    onClick={() => setServiceOpen((v) => !v)}
+                  >
+                    <span className="truncate">{serviceValue}</span>
+                    <ChevronDown className="w-4 h-4 text-slate-500" aria-hidden="true" />
+                  </button>
+                  {serviceOpen ? (
+                    <ul
+                      id="service-listbox"
+                      role="listbox"
+                      className="absolute left-0 right-0 top-full mt-2 max-h-60 overflow-auto rounded-xl border border-slate-200 bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+                    >
+                      {OPTIONS.map((opt) => (
+                        <li
+                          key={opt}
+                          role="option"
+                          aria-selected={serviceValue === opt}
+                          className={"px-3 py-2 cursor-pointer hover:bg-slate-100 " + (serviceValue === opt ? "bg-slate-50" : "")}
+                          onClick={() => { setServiceValue(opt); setServiceOpen(false); }}
+                        >
+                          {opt}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
+              </div>
+
               </div>
               <div>
                 <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
