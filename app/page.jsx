@@ -44,6 +44,8 @@ export default function HomePage() {
       <FAQ />
       <Contact />
       <Footer />
-      <StickyCTA /></main>
+      <StickyCTA />
+  <Services />
+</main>
   );
 }
