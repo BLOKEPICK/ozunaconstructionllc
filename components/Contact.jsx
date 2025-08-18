@@ -5,6 +5,21 @@ import { Mail, Phone } from "lucide-react";
 import { COMPANY, SERVICES } from "./constants";
 
 export default function Contact() {
+  const email = COMPANY.email || 'ozunaconstructionllc@gmail.com';
+  const mailtoHref = `mailto:${email}`;
+  function handleEmailClick() {
+    // Do not preventDefault: allow native mailto first
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isMobile) return; // mobile handles mailto fine
+    const t = setTimeout(() => {
+      if (document.hasFocus()) {
+        const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+        window.open(gmail, '_blank', 'noopener,noreferrer');
+      }
+    }, 800);
+    window.addEventListener('blur', () => clearTimeout(t), { once: true });
+  }
+
   const mailtoHref = `mailto:${COMPANY.email || 'ozunaconstructionllc@gmail.com'}`;
   function onSubmit(e) {
     e.preventDefault();
@@ -92,7 +107,7 @@ export default function Contact() {
                   <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
                   WhatsApp
                 </a>
-                <a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Email us"><Mail className="w-5 h-5" aria-hidden="true" />Email</a>
+                <a href={mailtoHref} onClick={handleEmailClick} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Email us"><Mail className="w-5 h-5" aria-hidden="true" />Email</a>
               </div>
               <div className="text-xs text-slate-500">
                 Business hours: Mon–Sat 8:00 AM – 6:00 PM · Sun: Emergencies
