@@ -1,48 +1,108 @@
 "use client";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { COMPANY, SERVICES } from "./constants";
 
 export default function Contact() {
   function onSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const name = data.get("name");
-    const phone = data.get("phone");
-    const email = data.get("email");
-    const service = data.get("service");
-    const message = data.get("message");
-    const msg = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${message}`);
-    window.location.href = `mailto:${COMPANY.email}?subject=Free%20Quote%20Request&body=${msg}`;
+    const name = data.get("name") || "";
+    const phone = data.get("phone") || "";
+    const email = data.get("email") || "";
+    const service = data.get("service") || "Other question";
+    const message = data.get("message") || "";
+    const subject = `${service} — Free Quote from ${name}`.slice(0, 140);
+    const body = [
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Service: ${service}`,
+      "",
+      message
+    ].join("\n");
+    const mailto = `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
   }
+
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-emerald-600 to-emerald-500 text-white">
-      <div className="gap-10 grid items-center lg:grid-cols-2 max-w-7xl mx-auto place-items-center px-4">
-        <div>
-          <h2 className="text-3xl font-extrabold tracking-tight">Get a Free Quote</h2>
-          <p className="mt-2 text-emerald-50">Tell us about your project and we’ll contact you today.</p>
-          <div className="gap-3 grid grid-cols-1 mt-6 place-items-center sm:grid-cols-3"><a href={COMPANY.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Phone className="w-5 h-5" /> Call</a><a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-400 font-medium gap-2 hover: hover:bg-gray-700 hover:bg-slate-50 inline-flex items-center px-5 py-2 rounded-full shadow-sm text-gray-700 text-slate-800 transition-colors"><FaWhatsapp className="text-lg" /> WhatsApp</a><a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Mail className="w-5 h-5" /> Email</a></div></div>
-        <form onSubmit={onSubmit} className="bg-white text-slate-900 rounded-2xl p-6 shadow-xl">
-          <div className="gap-4 grid place-items-center sm:grid-cols-2">
-            <div>
-              <label className="text-sm font-medium">Name</label>
-              <input name="name" required placeholder="Your name" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
-            <div>
-              <label className="text-sm font-medium">Phone</label>
-              <input name="phone" required placeholder="(614) ..." className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
-            <div>
-              <label className="text-sm font-medium">Email</label>
-              <input type="email" name="email" placeholder="you@example.com" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
-            <div>
-              <label className="text-sm font-medium">Service</label>
-              <select name="service" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2">
-                {SERVICES.map((s) => (<option key={s.slug} value={s.title}>{s.title}</option>))}
-              </select></div>
-            <div className="sm:col-span-2">
-              <label className="text-sm font-medium">Message</label>
-              <textarea name="message" rows={4} placeholder="Cuéntanos brevemente tu proyecto" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div></div>
-          <button type="submit" className="mt-4 w-full rounded-xl bg-slate-900 text-white font-semibold py-3 hover:bg-slate-800">Send</button>
-          <p className="mt-3 text-xs text-slate-500">Al enviar, se abrirá tu cliente de correo con los datos prellenados.</p></form></div></section>
+    <section id="contact" className="relative py-16 md:py-20 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
+      <div className="mx-auto max-w-7xl px-4">
+        <header className="max-w-2xl">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Get a Free Quote</h2>
+          <p className="mt-2 text-emerald-50">Tell us about your project and we’ll get back to you shortly.</p>
+        </header>
+
+        <div className="mt-8 rounded-2xl bg-white p-6 md:p-8 shadow-xl ring-1 ring-black/5">
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Form */}
+            <form onSubmit={onSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="text-sm font-medium text-slate-700">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name"
+                  className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500" required aria-required="true" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="phone" className="text-sm font-medium text-slate-700">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="(614) 555‑1234"
+                    className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="text-sm font-medium text-slate-700">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com"
+                    className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="service" className="text-sm font-medium text-slate-700">Service</label>
+                <select id="service" name="service"
+                  className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  {[...SERVICES.map(s => s.title), "Other question"].map((label) => (
+                    <option key={label} value={label}>{label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
+                <textarea id="message" name="message" rows={4} placeholder="Project details, timeline, address…"
+                  className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+              </div>
+              <button type="submit"
+                className="w-full rounded-xl bg-slate-900 text-white font-semibold py-3 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
+                Send
+              </button>
+              <p className="mt-2 text-xs text-slate-500">
+                By sending, your email app will open with the details pre‑filled.
+              </p>
+            </form>
+
+            {/* Contact options (centered) */}
+            <div className="flex flex-col items-center justify-center text-center gap-4">
+              <p className="text-slate-600">Prefer to talk directly?</p>
+              <div className="flex items-center justify-center flex-wrap gap-3">
+                <a href={COMPANY.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-white px-4 py-2 hover:bg-slate-800" aria-label="Call for a free estimate">
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                  Call
+                </a>
+                <a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-400 text-slate-800 px-4 py-2 hover:bg-slate-50" aria-label="Chat on WhatsApp">
+                  <FaWhatsapp className="w-5 h-5" aria-hidden="true" />
+                  WhatsApp
+                </a>
+                <a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50" aria-label="Email us">
+                  <Mail className="w-5 h-5" aria-hidden="true" />
+                  Email
+                </a>
+              </div>
+              <div className="text-xs text-slate-500">
+                Business hours: Mon–Sat 8:00 AM – 6:00 PM · Sun: Emergencies
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
