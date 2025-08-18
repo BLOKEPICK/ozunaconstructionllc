@@ -18,13 +18,13 @@ export default function Contact() {
   }
   return (
     <section id="contact" className="py-16 bg-gradient-to-br from-emerald-600 to-emerald-500 text-white">
-      <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-10 items-center">
+      <div className="gap-10 grid items-center lg:grid-cols-2 max-w-7xl mx-auto place-items-center px-4">
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight">Get a Free Quote</h2>
           <p className="mt-2 text-emerald-50">Tell us about your project and we’ll contact you today.</p>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3"><a href={COMPANY.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Phone className="w-5 h-5" /> Call</a><a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-gray-700 text-gray-700 bg-white hover:bg-gray-700 hover:text-white px-5 py-2 font-medium shadow-sm transition-colors"><FaWhatsapp className="text-lg" /> WhatsApp</a><a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Mail className="w-5 h-5" /> Email</a></div></div>
+          <div className="gap-3 grid grid-cols-1 mt-6 place-items-center sm:grid-cols-3"><a href={COMPANY.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Phone className="w-5 h-5" /> Call</a><a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-400 font-medium gap-2 hover: hover:bg-gray-700 hover:bg-slate-50 inline-flex items-center px-5 py-2 rounded-full shadow-sm text-gray-700 text-slate-800 transition-colors"><FaWhatsapp className="text-lg" /> WhatsApp</a><a href={`mailto:${COMPANY.email}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-white font-medium transition"><Mail className="w-5 h-5" /> Email</a></div></div>
         <form onSubmit={onSubmit} className="bg-white text-slate-900 rounded-2xl p-6 shadow-xl">
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="gap-4 grid place-items-center sm:grid-cols-2">
             <div>
               <label className="text-sm font-medium">Name</label>
               <input name="name" required placeholder="Your name" className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"/></div>
