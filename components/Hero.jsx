@@ -17,7 +17,7 @@ export default function Hero() {
             <a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-gray-700 text-gray-700 bg-white hover:bg-gray-700 hover:text-white px-5 py-2 font-medium shadow-sm transition-colors"><FaWhatsapp className="text-lg" /> Chat on WhatsApp</a></div></div>
         <div className="relative">
           <div className="aspect-[4/3] relative w-full rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-center p-6">
-            <Image src="/hero.webp" alt="Modern home exterior with architectural shingles and dark siding in Columbus, OH" quality={90} placeholder="blur" blurDataURL="data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwAwCdASoYAA0APtFUo0uoJKMhsAgBABoJYgAAWzRBviTiLGEiAAD+2CKlF8ByhI16YZ67rN18dHmeQyh6+nHov8BQyNgTg80lEn12fb1qmFOlidP9b4aPOdr9EnZtHYwNLW2KD7+C0tPv8xKzbo8aXm+g6wNp9t3V7gto+qXZd3J2jXm/zGm/8PLzZ5Fz+OaqcNVqihtoDqAA" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src="/hero.webp" alt="Close-up of beige siding corner on a residential home in Columbus, OH" quality={90} placeholder="blur" blurDataURL="data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwAwCdASoYAA0APtFUo0uoJKMhsAgBABoJYgAAWzRBviTiLGEiAAD+2CKlF8ByhI16YZ67rN18dHmeQyh6+nHov8BQyNgTg80lEn12fb1qmFOlidP9b4aPOdr9EnZtHYwNLW2KD7+C0tPv8xKzbo8aXm+g6wNp9t3V7gto+qXZd3J2jXm/zGm/8PLzZ5Fz+OaqcNVqihtoDqAA" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div></div></div></section>
   );
 }
