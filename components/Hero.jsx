@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Roofing, Siding & Remodeling in {COMPANY.city}</h1>
           <p className="mt-4 text-lg text-slate-200">Licensed & Insured · Free Estimates · Warranty on Labor</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#contact" className="rounded-xl px-6 py-3 bg-emerald-500 font-semibold text-slate-900 hover:bg-emerald-400">Get a Free Quote</a>
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-emerald-500 text-slate-900 hover:bg-emerald-600 px-5 py-2 font-semibold shadow-sm transition-colors">Get a Free Quote</a>
             <a href={COMPANY.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-gray-700 text-gray-700 bg-white hover:bg-gray-700 hover:text-white px-5 py-2 font-medium shadow-sm transition-colors"><FaWhatsapp className="text-lg" /> Chat on WhatsApp</a></div></div>
         <div className="relative">
           <div className="aspect-[4/3] w-full rounded-2xl bg-white/5 ring-1 ring-white/10 grid place-items-center text-center p-6">
