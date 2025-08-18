@@ -104,57 +104,7 @@ export default function ServicePage({ params }) {
   return (
     <main className="bg-white text-slate-900">
       {/* Header */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="flex items-center justify-between gap-4">
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">{svc.title}</h1>
-            <Link href="/#services" className="rounded-xl border border-white/20 px-4 py-2 hover:bg-white/10">
-              Back to Home
-            </Link>
-          </div>
-          <p className="mt-3 text-slate-200 max-w-3xl">{svc.hero}</p>
-        </div>
-      </section>
-
-      {/* Body */}
-      <section className="py-14">
-        <div className="mx-auto max-w-5xl px-4 grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="prose prose-slate max-w-none">
-              <p className="text-lg">{svc.desc}</p>
-            </div>
-            <ul className="mt-6 grid sm:grid-cols-2 gap-4">
-              {svc.bullets.map((b, i) => (
-                <li key={i} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <aside className="lg:col-span-1">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <h3 className="text-base font-semibold text-slate-900">Why homeowners choose {COMPANY.name}</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>Licensed & Insured</li>
-                <li>10+ Years Experience</li>
-                <li>Warranty on Labor</li>
-                <li>Local & Family‑Owned</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      {/* Quote Form */}
-      <section className="py-16 md:py-20 bg-emerald-500">
-  <div className="mx-auto max-w-5xl px-4">
-    <h2 className="text-2xl font-bold text-white">Get a Free Quote</h2>
-    <p className="mt-2 text-emerald-50">Tell us about your project and we’ll get back to you shortly.</p>
-    <div className="mt-6 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-black/5">
       <Contact />
-    </div>
-  </div>
-</section>
 
 <footer className="py-6 text-center text-xs text-slate-500 bg-white">
   © 2025 Ozuna Construction LLC. All rights reserved.
