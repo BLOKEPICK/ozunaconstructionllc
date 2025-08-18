@@ -73,8 +73,7 @@ export default function Footer() {
             <li><a href="#reviews" className="hover:text-white">Reviews</a></li>
             <li><a href="#areas" className="hover:text-white">Areas</a></li>
             <li><a href="#faq" className="hover:text-white">FAQ</a></li>
-            <li><a href="#contact" className="hover:text-white">Contact</a></li>
-          </ul>
+</ul>
         </div>
 
         {/* Column: Hours */}
@@ -83,13 +82,7 @@ export default function Footer() {
           <p className="mt-3 text-sm">
             Mon–Sat: 8:00 AM – 6:00 PM<br />Sun: Emergencies
           </p>
-          <a
-            href="#contact"
-            className="inline-block mt-4 rounded-xl bg-emerald-500 text-slate-900 font-semibold px-4 py-2"
-          >
-            Free Quote
-          </a>
-        </div>
+</div>
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs">
