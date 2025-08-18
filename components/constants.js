@@ -6,6 +6,7 @@ export const COMPANY = {
   phoneHref: "tel:16149840351",
   email: "ozunaconstructionllc@gmail.com",
   city: "Columbus, OH",
+  facebook: "https://www.facebook.com/people/Ozuna-Construction-llc/100065791530262/",
   instagram: "https://www.instagram.com/ozuna_construction_llc/",
   whatsappHref: "https://wa.me/16149840351"
 };
