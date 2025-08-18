@@ -146,15 +146,20 @@ export default function ServicePage({ params }) {
       </section>
 
       {/* Quote Form */}
-      <section className="py-14 bg-slate-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl font-bold">Get a Free Quote</h2>
-          <p className="mt-2 text-slate-600">Tell us about your project and we’ll get back to you shortly.</p>
-          <div className="mt-6">
-            <Contact />
-          </div>
-        </div>
-      </section>
+      <section className="py-16 md:py-20 bg-emerald-500">
+  <div className="mx-auto max-w-5xl px-4">
+    <h2 className="text-2xl font-bold text-white">Get a Free Quote</h2>
+    <p className="mt-2 text-emerald-50">Tell us about your project and we’ll get back to you shortly.</p>
+    <div className="mt-6 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-black/5">
+      <Contact />
+    </div>
+  </div>
+</section>
+
+<footer className="py-6 text-center text-xs text-slate-500 bg-white">
+  © 2025 Ozuna Construction LLC. All rights reserved.
+</footer>
+
 
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
