@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
 
 <!-- HERO SECTION -->
-<section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
+<section class="relative min-h-[80vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
 
   <!-- Background image -->
   <img 
@@ -14,66 +14,77 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   />
 
   <!-- Overlay gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/85"></div>
 
   <!-- Content -->
-  <div class="relative z-10 text-center px-6 max-w-3xl animate-fadeIn">
+  <div class="relative z-10 text-center px-4 md:px-6 max-w-3xl animate-fadeIn">
 
-    <!-- Small badge -->
-    <div class="inline-block bg-white/10 backdrop-blur px-4 py-1.5 rounded-full border border-white/20 mb-4">
-      <span class="text-sm font-medium text-white tracking-wide">
+    <!-- Badge -->
+    <div class="inline-block bg-white/10 backdrop-blur px-3 md:px-4 py-1.5 rounded-full border border-white/20 mb-4 md:mb-5">
+      <span class="text-xs md:text-sm font-medium text-white tracking-wide">
         ✅ Licensed & Insured Contractor
       </span>
     </div>
 
-    <!-- Headline -->
+    <!-- Main Title -->
     <h1 
-      class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4"
+      class="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4"
       data-i18n="hero_title"
     >
       Trusted Construction & Remodeling Experts
     </h1>
 
-    <!-- Sub text -->
+    <!-- Subtitle -->
     <p 
-      class="text-gray-200 text-lg md:text-2xl mb-8 font-medium"
+      class="text-gray-200 text-base md:text-xl mb-6 md:mb-8 font-medium"
       data-i18n="hero_sub"
     >
       High-quality workmanship for residential & commercial projects.
     </p>
 
-    <!-- Supporting line -->
-    <p class="text-gray-300 text-sm md:text-base mb-10 italic">
+    <!-- Supporting Line -->
+    <p class="text-gray-300 text-xs md:text-sm mb-8 italic">
       Building trust with every project. Excellence isn’t just our goal — it's our standard.
     </p>
 
     <!-- CTA Buttons -->
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+
+      <!-- Scroll to form -->
       <a 
         href="#quote"
-        class="px-8 py-3 rounded-full text-base font-semibold bg-indigo text-white hover:bg-indigo/90 transition shadow-xl hover:shadow-indigo/40"
+        class="px-7 py-3 rounded-full text-sm md:text-base font-semibold bg-white text-indigo hover:bg-gray-100 transition shadow-md"
         data-i18n="btn_quote"
       >
         📝 Get a Quote
       </a>
+
+      <!-- Call Now -->
       <a 
         href="tel:+16149840351"
-        class="px-8 py-3 rounded-full text-base font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition"
+        class="px-7 py-3 rounded-full text-sm md:text-base font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition"
         data-i18n="btn_call"
       >
         📞 Call Now
       </a>
-      <a 
-        href="https://wa.me/16149840351"
-        class="px-8 py-3 rounded-full text-base font-semibold bg-green text-white hover:bg-green/90 transition shadow-lg"
-        data-i18n="btn_whatsapp"
-      >
-        💬 WhatsApp
-      </a>
+
     </div>
 
   </div>
 </section>
+
+<!-- smooth scroll -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener("click",e=>{
+    e.preventDefault();
+    document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+      behavior:"smooth"
+    });
+  });
+});
+</script>
+
 
 
 <!-- WHY CHOOSE US -->
