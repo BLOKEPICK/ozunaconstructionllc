@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Siding | Ozuna Construction";
+---
+<BaseLayout title={title}>
+  <section class="section">
+    <div class="container">
+      <h2 class="t-en">Siding</h2>
+      <h2 class="t-es">Revestimientos</h2>
+      <p class="t-en">Professional siding services you can trust.</p>
+      <p class="t-es">Servicios profesionales de siding en los que puedes confiar.</p>
+      <div class="row" style="gap:22px;align-items:flex-start">
+        <div class="card" style="flex:1;min-width:260px">
+          <h3 class="t-en">What we offer</h3>
+          <h3 class="t-es">Qué ofrecemos</h3>
+          <ul class="t-en"><li>• Vinyl & fiber cement</li><li>• Wood & composite</li><li>• Repairs & upgrades</li></ul>
+          <ul class="t-es"><li>• Vinilo y fibrocemento</li><li>• Madera y compuesto</li><li>• Reparaciones y mejoras</li></ul>
+          <div class="space"></div>
+          <a href="/contact" class="btn btn-primary t-en">Get a Free Estimate</a>
+          <a href="/contact" class="btn btn-primary t-es">Pide una Cotización</a>
+        </div>
+        <div class="gallery" style="flex:2">
+          <div class="img"><img src="/siding-placeholder.svg" alt="Siding photo"/></div>
+          <div class="img"><img src="/siding-placeholder.svg" alt="Siding photo"/></div>
+          <div class="img"><img src="/siding-placeholder.svg" alt="Siding photo"/></div>
+          <div class="img"><img src="/siding-placeholder.svg" alt="Siding photo"/></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

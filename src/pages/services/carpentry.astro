@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Carpentry | Ozuna Construction";
+---
+<BaseLayout title={title}>
+  <section class="section">
+    <div class="container">
+      <h2 class="t-en">Carpentry</h2>
+      <h2 class="t-es">Carpintería</h2>
+      <p class="t-en">Professional carpentry services you can trust.</p>
+      <p class="t-es">Servicios profesionales de carpentry en los que puedes confiar.</p>
+      <div class="row" style="gap:22px;align-items:flex-start">
+        <div class="card" style="flex:1;min-width:260px">
+          <h3 class="t-en">What we offer</h3>
+          <h3 class="t-es">Qué ofrecemos</h3>
+          <ul class="t-en"><li>• Trim & finish work</li><li>• Decks & stairs</li><li>• Custom carpentry</li></ul>
+          <ul class="t-es"><li>• Acabados y molduras</li><li>• Decks y escaleras</li><li>• Carpintería a medida</li></ul>
+          <div class="space"></div>
+          <a href="/contact" class="btn btn-primary t-en">Get a Free Estimate</a>
+          <a href="/contact" class="btn btn-primary t-es">Pide una Cotización</a>
+        </div>
+        <div class="gallery" style="flex:2">
+          <div class="img"><img src="/carpentry-placeholder.svg" alt="Carpentry photo"/></div>
+          <div class="img"><img src="/carpentry-placeholder.svg" alt="Carpentry photo"/></div>
+          <div class="img"><img src="/carpentry-placeholder.svg" alt="Carpentry photo"/></div>
+          <div class="img"><img src="/carpentry-placeholder.svg" alt="Carpentry photo"/></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

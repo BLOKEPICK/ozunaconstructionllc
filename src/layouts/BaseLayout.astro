@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {{ title = 'Ozuna Construction', description = 'Professional Construction & Remodeling Services' }} = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <meta name="description" content={{description}} />
+    <link rel="stylesheet" href="/src/styles/styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">Ozuna Construction</div>
+        <nav class="row" style="gap:10px">
+          <a class="switcher" href="#" data-lang-switch>Español / English</a>
+          <a class="switcher" href="tel:+16149840351">📞 (614) 984-0351</a>
+          <a class="switcher" href="mailto:ozunaconstructionllc@gmail.com">✉️ Email</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row" style="justify-content:space-between;align-items:center">
+          <div>© {{new Date().getFullYear()}} Ozuna Construction · <span class="t-en">Serving Ohio</span><span class="t-es">Sirviendo Ohio</span></div>
+          <div class="row">
+            <a href="tel:+16149840351" class="badge">📞 (614) 984-0351</a>
+            <a href="https://wa.me/16149840351" class="badge">💬 WhatsApp</a>
+            <a href="mailto:ozunaconstructionllc@gmail.com" class="badge">✉️ ozunaconstructionllc@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a class="float-whatsapp btn btn-green" href="https://wa.me/16149840351" target="_blank" rel="noopener">WhatsApp</a>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

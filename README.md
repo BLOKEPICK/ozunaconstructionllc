@@ -1,3 +1,10 @@
-# Ozuna Construction LLC Website
+# Ozuna Construction — Minimal Astro Site
 
-Proyecto Next.js con WhatsApp Button actualizado (gris corporativo).
+Bilingual (English/Spanish) with automatic detection plus a manual toggle.
+
+## Quick start
+npm i
+npm run dev
+npm run build
+
+Deploy on Vercel (build output in `dist/`).

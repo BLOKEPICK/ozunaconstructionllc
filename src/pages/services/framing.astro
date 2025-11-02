@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Framing | Ozuna Construction";
+---
+<BaseLayout title={title}>
+  <section class="section">
+    <div class="container">
+      <h2 class="t-en">Framing</h2>
+      <h2 class="t-es">Estructuras</h2>
+      <p class="t-en">Professional framing services you can trust.</p>
+      <p class="t-es">Servicios profesionales de framing en los que puedes confiar.</p>
+      <div class="row" style="gap:22px;align-items:flex-start">
+        <div class="card" style="flex:1;min-width:260px">
+          <h3 class="t-en">What we offer</h3>
+          <h3 class="t-es">Qué ofrecemos</h3>
+          <ul class="t-en"><li>• Structural framing</li><li>• Additions & expansions</li><li>• Deck framing</li></ul>
+          <ul class="t-es"><li>• Estructuras</li><li>• Ampliaciones</li><li>• Estructuras para decks</li></ul>
+          <div class="space"></div>
+          <a href="/contact" class="btn btn-primary t-en">Get a Free Estimate</a>
+          <a href="/contact" class="btn btn-primary t-es">Pide una Cotización</a>
+        </div>
+        <div class="gallery" style="flex:2">
+          <div class="img"><img src="/framing-placeholder.svg" alt="Framing photo"/></div>
+          <div class="img"><img src="/framing-placeholder.svg" alt="Framing photo"/></div>
+          <div class="img"><img src="/framing-placeholder.svg" alt="Framing photo"/></div>
+          <div class="img"><img src="/framing-placeholder.svg" alt="Framing photo"/></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,1 +1,0 @@
-const site=process.env.NEXT_PUBLIC_SITE_URL||'https://ozunaconstructionllc.vercel.app';export default function sitemap(){return['','/services/roofing','/services/siding','/services/framing','/services/remodeling'].map(p=>({url:`${site}${p}`,lastModified:new Date(),changeFrequency:'monthly',priority:p===''?1:0.7}))}
