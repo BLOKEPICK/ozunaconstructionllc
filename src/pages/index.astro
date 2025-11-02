@@ -1,18 +1,80 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+
 <BaseLayout>
-<section class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl font-bold text-indigo mb-4 t-en">Construction & Remodeling in Ohio</h1>
-    <h1 class="text-4xl font-bold text-indigo mb-4 t-es">Construcción & Remodelación en Ohio</h1>
+<section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
 
-    <p class="text-gray-600 max-w-2xl mx-auto mb-8 t-en">Quality work. Trusted by homeowners and businesses.</p>
-    <p class="text-gray-600 max-w-2xl mx-auto mb-8 t-es">Trabajo de calidad. Confiable para hogares y negocios.</p>
+  <!-- Background image -->
+  <img 
+    src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1600" 
+    alt="Construction Worker" 
+    class="absolute inset-0 w-full h-full object-cover object-center opacity-70"
+  />
 
-    <div class="flex gap-4 justify-center">
-      <a class="bg-indigo text-white px-6 py-3 rounded-full text-sm font-semibold" href="tel:+16149840351">Call</a>
-      <a class="bg-green text-white px-6 py-3 rounded-full text-sm font-semibold" href="https://wa.me/16149840351">WhatsApp</a>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gray-900/60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-en">
+      Professional Construction & Remodeling Services
+    </h1>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-es">
+      Servicios Profesionales de Construcción & Remodelación
+    </h1>
+
+    <p class="text-gray-200 text-lg md:text-xl mb-8 t-en">
+      Reliable, high-quality workmanship for residential and commercial projects.
+    </p>
+    <p class="text-gray-200 text-lg md:text-xl mb-8 t-es">
+      Mano de obra confiable y de alta calidad para proyectos residenciales y comerciales.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="tel:+16149840351"
+         class="bg-indigo hover:bg-indigo/90 text-white px-6 py-3 rounded-full text-sm font-semibold">
+        📞 Call Us
+      </a>
+      <a href="https://wa.me/16149840351" target="_blank"
+         class="bg-green hover:bg-green/90 text-white px-6 py-3 rounded-full text-sm font-semibold">
+        💬 WhatsApp
+      </a>
+      <a href="/services/roofing"
+         class="bg-white text-indigo border border-white hover:bg-gray-100 px-6 py-3 rounded-full text-sm font-semibold">
+        🏗️ Our Services
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Simple Services preview (below hero) -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-indigo mb-10 t-en">Our Services</h2>
+    <h2 class="text-3xl font-bold text-center text-indigo mb-10 t-es">Nuestros Servicios</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+
+      <a href="/services/roofing" class="p-5 bg-gray-50 hover:shadow rounded-lg">
+        🏠<div class="font-semibold mt-2">Roofing</div>
+      </a>
+      <a href="/services/framing" class="p-5 bg-gray-50 hover:shadow rounded-lg">
+        🧱<div class="font-semibold mt-2">Framing</div>
+      </a>
+      <a href="/services/siding" class="p-5 bg-gray-50 hover:shadow rounded-lg">
+        🪟<div class="font-semibold mt-2">Siding</div>
+      </a>
+      <a href="/services/carpentry" class="p-5 bg-gray-50 hover:shadow rounded-lg">
+        🪚<div class="font-semibold mt-2">Carpentry</div>
+      </a>
+      <a href="/services/remodeling" class="p-5 bg-gray-50 hover:shadow rounded-lg">
+        🛠️<div class="font-semibold mt-2">Remodeling</div>
+      </a>
+
     </div>
   </div>
 </section>
