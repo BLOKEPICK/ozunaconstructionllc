@@ -11,12 +11,37 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <meta name="description" content={description} />
 </head>
 <body class="bg-white text-gray-900 font-[var(--font-main)]">
-<header class="sticky top-0 bg-white border-b z-30">
+<header class="sticky top-0 bg-white/80 backdrop-blur border-b z-30">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="font-bold text-indigo text-lg">Ozuna Construction</a>
-    <div class="flex items-center gap-4 text-sm">
-      <button data-lang-switch class="text-gray-600 hover:text-indigo">Español / English</button>
-      <a href="tel:+16149840351" class="text-gray-600 hover:text-indigo">📞 (614) 984-0351</a>
+
+    <!-- LOGO -->
+    <a href="/" class="flex items-center gap-2">
+      <!-- Construction icon -->
+      <span class="text-indigo text-2xl">🏗️</span>
+      <span class="font-extrabold text-xl text-indigo tracking-wide">
+        Ozuna Construction
+      </span>
+    </a>
+
+    <!-- Right nav -->
+    <div class="flex items-center gap-3">
+
+      <!-- Language toggle -->
+      <button
+        data-lang-switch
+        class="px-3 py-1.5 rounded-full text-sm font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
+      >
+        EN / ES
+      </button>
+
+      <!-- Quote button -->
+      <a 
+        href="#quote"
+        class="px-4 py-2 rounded-full text-sm font-semibold bg-indigo text-white hover:bg-indigo/90 transition shadow-sm"
+      >
+        Get a Quote
+      </a>
+
     </div>
   </div>
 </header>
