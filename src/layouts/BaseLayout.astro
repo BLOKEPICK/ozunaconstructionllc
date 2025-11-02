@@ -3,6 +3,7 @@ import "../styles/global.css";
 export interface Props { title?: string; description?: string }
 const { title="Ozuna Construction", description="Professional Construction Services" } = Astro.props;
 ---
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -13,7 +14,7 @@ const { title="Ozuna Construction", description="Professional Construction Servi
 
 <body class="bg-white text-gray-900 font-[var(--font-main)] lang-en">
 
-<!-- FIXED HEADER -->
+<!-- HEADER -->
 <header id="site-header" class="sticky top-0 bg-white/80 backdrop-blur-md border-b z-50 supports-backdrop">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
 
@@ -30,7 +31,6 @@ const { title="Ozuna Construction", description="Professional Construction Servi
       <button
         data-lang-switch
         class="px-3 py-1.5 rounded-full text-sm font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
-        data-i18n="lang_toggle"
         type="button"
         aria-label="Toggle language"
       >
@@ -40,18 +40,16 @@ const { title="Ozuna Construction", description="Professional Construction Servi
       <a 
         href="#quote"
         class="px-4 py-2 rounded-full text-sm font-semibold bg-indigo text-white hover:bg-indigo/90 transition shadow-sm"
-        data-i18n="btn_quote"
       >
         Get a Quote
       </a>
     </div>
 
-    <!-- Mobile Actions -->
+    <!-- Mobile -->
     <div class="flex sm:hidden items-center gap-2">
       <button
         data-lang-switch
         class="px-2 py-1 rounded-full text-xs font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
-        data-i18n="lang_toggle"
         type="button"
         aria-label="Toggle language"
       >
@@ -70,66 +68,63 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   </div>
 </header>
 
-<!-- Main with dynamic top padding (header height) -->
-<main id="page-main" style="padding-top: var(--header-h, 85px);"><slot /></main>
+<!-- Main (NO top padding) -->
+<main id="page-main"><slot /></main>
 
-<!-- WhatsApp Floating Button -->
+<!-- WhatsApp Button -->
 <a href="https://wa.me/16149840351"
   class="fixed bottom-5 right-5 bg-green text-white px-5 py-3 rounded-full shadow-xl font-semibold text-sm hover:bg-green/90 transition">
   💬 WhatsApp
 </a>
 
-<!-- Lang + Header Offset + Smooth Scroll (mobile-safe) -->
+<!-- Language + Scroll Fix -->
 <script>
-  (function () {
-    // -------- Header height -> CSS var (works on iOS when bars collapse/expand)
-    const header = document.getElementById('site-header');
-    function setHeaderOffset() {
-      const h = header?.offsetHeight || 85;
-      document.documentElement.style.setProperty('--header-h', h + 'px');
-    }
-    setHeaderOffset();
-    window.addEventListener('resize', setHeaderOffset);
-    window.addEventListener('orientationchange', setHeaderOffset);
+(function () {
+  // Header height variable
+  const header = document.getElementById('site-header');
+  function setHeaderOffset() {
+    const h = header?.offsetHeight || 85;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  setHeaderOffset();
+  window.addEventListener('resize', setHeaderOffset);
+  window.addEventListener('orientationchange', setHeaderOffset);
 
-    // -------- Language toggle: show only one language (hides the other)
-    const LS_KEY = 'site_lang';
-    function applyLang(lang) {
-      const isES = (lang || '').toLowerCase().startsWith('es');
-      document.documentElement.lang = isES ? 'es' : 'en';
-      document.body.classList.toggle('lang-es', isES);
-      document.body.classList.toggle('lang-en', !isES);
-      localStorage.setItem(LS_KEY, isES ? 'es' : 'en');
-    }
-    // Init from localStorage -> navigator.language
-    applyLang(localStorage.getItem(LS_KEY) || navigator.language || 'en');
+  // Language toggle
+  const LS_KEY = 'site_lang';
+  function applyLang(lang) {
+    const isES = (lang || '').toLowerCase().startsWith('es');
+    document.documentElement.lang = isES ? 'es' : 'en';
+    document.body.classList.toggle('lang-es', isES);
+    document.body.classList.toggle('lang-en', !isES);
+    localStorage.setItem(LS_KEY, isES ? 'es' : 'en');
+  }
+  applyLang(localStorage.getItem(LS_KEY) || navigator.language || 'en');
 
-    document.querySelectorAll('[data-lang-switch]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const next = document.body.classList.contains('lang-es') ? 'en' : 'es';
-        applyLang(next);
-      });
+  document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = document.body.classList.contains('lang-es') ? 'en' : 'es';
+      applyLang(next);
     });
+  });
 
-    // -------- Smooth scroll with dynamic header offset
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href^="#"]');
-      if (!link) return;
+  // Smooth scroll
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
 
-      const id = link.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (!target) return;
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
 
-      e.preventDefault();
+    e.preventDefault();
+    
+    const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 85;
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH;
 
-      // read current header height from CSS var
-      const varVal = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim();
-      const headerH = parseInt(varVal, 10) || 85;
-
-      const y = target.getBoundingClientRect().top + window.scrollY - headerH;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    });
-  })();
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+})();
 </script>
 
 </body>

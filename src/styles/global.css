@@ -24,21 +24,16 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* ✅ Offset so anchor scroll doesn't hide behind fixed header */
-html {
-  scroll-padding-top: 75px; /* same height as header */
-}
-
-/* Mostrar solo un idioma a la vez */
+/* ✅ Mostrar solo un idioma a la vez */
 .lang-en .t-es { display: none !important; }
 .lang-es .t-en { display: none !important; }
 
-/* Offset nativo para anclas (fallback si no hay JS) */
+/* ✅ Offset nativo para evitar que el header tape el contenido (para anclas) */
 html { 
-  scroll-padding-top: var(--header-h, 85px); 
+  scroll-padding-top: var(--header-h, 85px);
 }
 
-/* iOS sticky header fix */
+/* ✅ Fix para iOS sticky header */
 @supports (-webkit-touch-callout: none) {
   header {
     position: sticky !important;
