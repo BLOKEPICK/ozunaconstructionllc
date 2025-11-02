@@ -37,3 +37,11 @@ html {
 html { 
   scroll-padding-top: var(--header-h, 85px); 
 }
+
+/* iOS sticky header fix */
+@supports (-webkit-touch-callout: none) {
+  header {
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
