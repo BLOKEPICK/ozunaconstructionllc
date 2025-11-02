@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 export interface Props { title?: string; description?: string }
 const { title="Ozuna Construction", description="Professional Construction Services" } = Astro.props;
 ---
@@ -8,26 +9,25 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="stylesheet" href="/src/styles/global.css">
 </head>
-<body class="font-sans">
-  <header class="sticky top-0 bg-white border-b z-30">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="/" class="font-bold text-indigo text-lg">Ozuna Construction</a>
-      <div class="flex gap-4 text-sm">
-        <button data-lang-switch class="text-gray-600 hover:text-indigo">Español / English</button>
-        <a href="tel:+16149840351" class="text-gray-600 hover:text-indigo">📞 (614) 984-0351</a>
-      </div>
+<body class="font-sans bg-white text-gray-900">
+<header class="sticky top-0 bg-white border-b z-30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="font-bold text-indigo text-lg">Ozuna Construction</a>
+    <div class="flex items-center gap-4 text-sm">
+      <button data-lang-switch class="text-gray-600 hover:text-indigo">Español / English</button>
+      <a href="tel:+16149840351" class="text-gray-600 hover:text-indigo">📞 (614) 984-0351</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main><slot /></main>
+<main><slot /></main>
 
-  <a href="https://wa.me/16149840351"
-     class="fixed bottom-5 right-5 bg-green text-white px-5 py-3 rounded-full shadow-lg text-sm font-semibold">
-     WhatsApp
-  </a>
+<a href="https://wa.me/16149840351"
+  class="fixed bottom-5 right-5 bg-green text-white px-5 py-3 rounded-full shadow-xl font-semibold text-sm hover:bg-green/90 transition">
+  💬 WhatsApp
+</a>
 
-  <script src="/app.js" defer></script>
+<script src="/app.js" defer></script>
 </body>
 </html>
