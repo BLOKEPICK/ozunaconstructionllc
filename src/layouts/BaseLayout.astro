@@ -11,10 +11,10 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <meta name="description" content={description} />
 </head>
 
-<body class="bg-white text-gray-900 font-[var(--font-main)]">
+<body class="bg-white text-gray-900 font-[var(--font-main)] lang-en">
 
 <!-- FIXED HEADER -->
-<header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur-md border-b z-50">
+<header id="site-header" class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur-md border-b z-50">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
 
     <!-- Logo -->
@@ -31,6 +31,8 @@ const { title="Ozuna Construction", description="Professional Construction Servi
         data-lang-switch
         class="px-3 py-1.5 rounded-full text-sm font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
         data-i18n="lang_toggle"
+        type="button"
+        aria-label="Toggle language"
       >
         EN / ES
       </button>
@@ -50,6 +52,8 @@ const { title="Ozuna Construction", description="Professional Construction Servi
         data-lang-switch
         class="px-2 py-1 rounded-full text-xs font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
         data-i18n="lang_toggle"
+        type="button"
+        aria-label="Toggle language"
       >
         EN/ES
       </button>
@@ -66,8 +70,8 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   </div>
 </header>
 
-<!-- Prevent header overlapping content -->
-<main class="pt-20"><slot /></main>
+<!-- Main with dynamic top padding (header height) -->
+<main id="page-main" style="padding-top: var(--header-h, 85px);"><slot /></main>
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/16149840351"
@@ -75,23 +79,57 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   💬 WhatsApp
 </a>
 
-<!-- Smooth scroll fix for mobile/iOS -->
+<!-- Lang + Header Offset + Smooth Scroll (mobile-safe) -->
 <script>
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
+  (function () {
+    // -------- Header height -> CSS var (works on iOS when bars collapse/expand)
+    const header = document.getElementById('site-header');
+    function setHeaderOffset() {
+      const h = header?.offsetHeight || 85;
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+    }
+    setHeaderOffset();
+    window.addEventListener('resize', setHeaderOffset);
+    window.addEventListener('orientationchange', setHeaderOffset);
 
-    const id = link.getAttribute("href").slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
+    // -------- Language toggle: show only one language (hides the other)
+    const LS_KEY = 'site_lang';
+    function applyLang(lang) {
+      const isES = (lang || '').toLowerCase().startsWith('es');
+      document.documentElement.lang = isES ? 'es' : 'en';
+      document.body.classList.toggle('lang-es', isES);
+      document.body.classList.toggle('lang-en', !isES);
+      localStorage.setItem(LS_KEY, isES ? 'es' : 'en');
+    }
+    // Init from localStorage -> navigator.language
+    applyLang(localStorage.getItem(LS_KEY) || navigator.language || 'en');
 
-    e.preventDefault();
+    document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const next = document.body.classList.contains('lang-es') ? 'en' : 'es';
+        applyLang(next);
+      });
+    });
 
-    const headerHeight = 85; // mobile safe area offset
-    const scrollTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+    // -------- Smooth scroll with dynamic header offset
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
 
-    window.scrollTo({ top: scrollTop, behavior: "smooth" });
-  });
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      e.preventDefault();
+
+      // read current header height from CSS var
+      const varVal = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim();
+      const headerH = parseInt(varVal, 10) || 85;
+
+      const y = target.getBoundingClientRect().top + window.scrollY - headerH;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  })();
 </script>
 
 </body>

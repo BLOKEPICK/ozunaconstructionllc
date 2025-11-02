@@ -28,3 +28,12 @@
 html {
   scroll-padding-top: 75px; /* same height as header */
 }
+
+/* Mostrar solo un idioma a la vez */
+.lang-en .t-es { display: none !important; }
+.lang-es .t-en { display: none !important; }
+
+/* Offset nativo para anclas (fallback si no hay JS) */
+html { 
+  scroll-padding-top: var(--header-h, 85px); 
+}
