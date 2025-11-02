@@ -6,9 +6,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <!-- HERO SECTION -->
 <section class="relative min-h-[80vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
 
-  <!-- HERO SECTION -->
-<section class="relative min-h-[80vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
-
   <!-- Background image -->
   <img 
     src="/hero1.webp"
@@ -20,7 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/85"></div>
 
   <!-- Content -->
-  <div class="relative z-10 text-center px-4 md:px-6 max-w-3xl mx-auto animate-fadeIn">
+  <div class="relative z-10 text-center px-4 md:px-6 max-w-3xl animate-fadeIn">
 
     <!-- Badge -->
     <div class="inline-block bg-white/10 backdrop-blur px-3 md:px-4 py-1.5 rounded-full border border-white/20 mb-4 md:mb-5">
@@ -30,19 +27,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <!-- Main Title -->
-    <h1 class="t-en text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+    <h1 
+      class="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4"
+      data-i18n="hero_title"
+    >
       Trusted Construction & Remodeling Experts
-    </h1>
-    <h1 class="t-es text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-      Expertos Confiables en Construcción & Remodelación
     </h1>
 
     <!-- Subtitle -->
-    <p class="t-en text-gray-200 text-base md:text-xl mb-6 md:mb-8 font-medium">
+    <p 
+      class="text-gray-200 text-base md:text-xl mb-6 md:mb-8 font-medium"
+      data-i18n="hero_sub"
+    >
       High-quality workmanship for residential & commercial projects.
-    </p>
-    <p class="t-es text-gray-200 text-base md:text-xl mb-6 md:mb-8 font-medium">
-      Mano de obra de alta calidad para proyectos residenciales y comerciales.
     </p>
 
     <!-- Supporting Line -->
@@ -57,18 +54,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <a 
         href="#quote"
         class="px-7 py-3 rounded-full text-sm md:text-base font-semibold bg-white text-indigo hover:bg-gray-100 transition shadow-md"
-        aria-label="Get a Quote"
+        data-i18n="btn_quote"
       >
-        📝 <span class="t-en">Get a Quote</span><span class="t-es">Obtener Cotización</span>
+        📝 Get a Quote
       </a>
 
       <!-- Call Now -->
       <a 
         href="tel:+16149840351"
         class="px-7 py-3 rounded-full text-sm md:text-base font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition"
-        aria-label="Call Now"
+        data-i18n="btn_call"
       >
-        📞 <span class="t-en">Call Now</span><span class="t-es">Llamar Ahora</span>
+        📞 Call Now
       </a>
 
     </div>
