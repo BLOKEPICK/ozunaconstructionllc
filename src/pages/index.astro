@@ -2,46 +2,76 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout>
+
 <section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
 
-  <!-- Hero image (tu imagen local) -->
+  <!-- Background image -->
   <img 
-  src="/hero1.webp"
-  alt="Construction Hero Image"
-  class="absolute inset-0 w-full h-full object-cover object-center opacity-90"
-/>
+    src="/hero1.webp"
+    alt="Construction Hero Image"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+  />
 
   <!-- Overlay gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85"></div>
 
   <!-- Content -->
-  <div class="relative z-10 text-center px-6 max-w-3xl">
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 t-en">
+  <div class="relative z-10 text-center px-6 max-w-3xl animate-fadeIn">
+
+    <!-- Small badge -->
+    <div class="inline-block bg-white/10 backdrop-blur px-4 py-1.5 rounded-full border border-white/20 mb-4">
+      <span class="text-sm font-medium text-white tracking-wide">
+        ✅ Licensed & Insured Contractor
+      </span>
+    </div>
+
+    <!-- Headline -->
+    <h1 
+      class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4"
+      data-i18n="hero_title"
+    >
       Trusted Construction & Remodeling Experts
     </h1>
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 t-es">
-      Expertos Confiables en Construcción & Remodelación
-    </h1>
 
-    <p class="text-gray-200 text-lg md:text-2xl mb-8 font-medium t-en">
+    <!-- Sub text -->
+    <p 
+      class="text-gray-200 text-lg md:text-2xl mb-8 font-medium"
+      data-i18n="hero_sub"
+    >
       High-quality workmanship for residential & commercial projects.
     </p>
-    <p class="text-gray-200 text-lg md:text-2xl mb-8 font-medium t-es">
-      Mano de obra de alta calidad para proyectos residenciales y comerciales.
+
+    <!-- Supporting line -->
+    <p class="text-gray-300 text-sm md:text-base mb-10 italic">
+      Building trust with every project. Excellence isn’t just our goal — it's our standard.
     </p>
 
+    <!-- CTA Buttons -->
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="tel:+16149840351" class="bg-indigo hover:bg-indigo/80 text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg">
+      <a 
+        href="#quote"
+        class="px-8 py-3 rounded-full text-base font-semibold bg-indigo text-white hover:bg-indigo/90 transition shadow-xl hover:shadow-indigo/40"
+        data-i18n="btn_quote"
+      >
+        📝 Get a Quote
+      </a>
+      <a 
+        href="tel:+16149840351"
+        class="px-8 py-3 rounded-full text-base font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition"
+        data-i18n="btn_call"
+      >
         📞 Call Now
       </a>
-      <a href="https://wa.me/16149840351" class="bg-green hover:bg-green/80 text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg">
+      <a 
+        href="https://wa.me/16149840351"
+        class="px-8 py-3 rounded-full text-base font-semibold bg-green text-white hover:bg-green/90 transition shadow-lg"
+        data-i18n="btn_whatsapp"
+      >
         💬 WhatsApp
       </a>
-      <a href="/services/roofing" class="bg-white text-indigo hover:bg-gray-100 px-8 py-3 rounded-full text-base font-semibold shadow-lg">
-        🛠️ View Services
-      </a>
     </div>
-  </div>
 
+  </div>
 </section>
+
 </BaseLayout>
