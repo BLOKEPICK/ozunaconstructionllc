@@ -7,9 +7,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <!-- HERO SMALL -->
 <section class="relative h-[40vh] flex items-center justify-center bg-gray-900 text-center">
 
-  <img src="/roofing-hero.jpg" 
+  <img src="/roofing.webp"
        alt="Roofing Services"
-       class="absolute inset-0 w-full h-full object-cover object-center opacity-70"/>
+       class="absolute inset-0 w-full h-full object-cover object-center opacity-80"/>
 
   <div class="absolute inset-0 bg-black/60"></div>
 
@@ -48,18 +48,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
      </p>
 
      <ul class="space-y-2 text-gray-700 mb-6">
-       <li>✅ <span class="t-en">Roof replacement & installation</span><span class="t-es">Instalación y reemplazo de techos</span></li>
-       <li>✅ <span class="t-en">Leak detection & repair</span><span class="t-es">Detección y reparación de goteras</span></li>
-       <li>✅ <span class="t-en">Shingle & metal roofs</span><span class="t-es">Techos de tejas y metal</span></li>
-       <li>✅ <span class="t-en">Storm damage repair</span><span class="t-es">Reparación por daños de tormenta</span></li>
-       <li>✅ <span class="t-en">Licensed & insured team</span><span class="t-es">Equipo licenciado y asegurado</span></li>
+       <li>✅ <span class="t-en">Roof replacement & installation</span> <span class="t-es">Instalación y reemplazo de techos</span></li>
+       <li>✅ <span class="t-en">Leak detection & repair</span> <span class="t-es">Detección y reparación de goteras</span></li>
+       <li>✅ <span class="t-en">Shingle & metal roofs</span> <span class="t-es">Techos de tejas y metal</span></li>
+       <li>✅ <span class="t-en">Storm damage repair</span> <span class="t-es">Reparación por daños de tormenta</span></li>
+       <li>✅ <span class="t-en">Licensed & insured team</span> <span class="t-es">Equipo licenciado y asegurado</span></li>
      </ul>
 
-     <a href="#quote" 
-        class="bg-indigo text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-indigo/90 transition">
-       <span class="t-en">Request Free Estimate</span>
-       <span class="t-es">Solicitar Cotización Gratis</span>
-     </a>
+     <!-- CTA buttons -->
+     <div class="flex flex-wrap gap-3">
+       <a href="tel:+16149840351" class="bg-indigo text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-indigo/90 transition">
+         📞 <span class="t-en">Call Now</span><span class="t-es">Llamar Ahora</span>
+       </a>
+       <a href="https://wa.me/16149840351" class="bg-green text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-green/90 transition">
+         💬 WhatsApp
+       </a>
+     </div>
+
    </div>
 
  </div>
@@ -90,9 +95,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
  <p class="t-en text-gray-600 mb-6">Call now or request a free estimate.</p>
  <p class="t-es text-gray-600 mb-6">Llámanos o solicita una cotización gratis.</p>
 
- <a href="tel:+16149840351" 
-    class="px-8 py-3 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
-   📞 <span class="t-en">Call Now</span><span class="t-es">Llamar Ahora</span>
+ <a href="#quote" class="px-8 py-3 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
+   📝 <span class="t-en">Get Estimate</span><span class="t-es">Solicitar Cotización</span>
  </a>
 </section>
 
