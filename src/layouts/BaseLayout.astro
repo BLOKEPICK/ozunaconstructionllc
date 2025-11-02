@@ -2,7 +2,7 @@
 export interface Props { title?: string; description?: string }
 const { title="Ozuna Construction", description="Professional Construction Services" } = Astro.props;
 ---
-<html lang="en" class="bg-white text-gray-900">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <link rel="stylesheet" href="/src/styles/global.css">
 </head>
 <body class="font-sans">
-  <header class="sticky top-0 bg-white border-b border-gray-200 z-30">
+  <header class="sticky top-0 bg-white border-b z-30">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <a href="/" class="font-bold text-indigo text-lg">Ozuna Construction</a>
       <div class="flex gap-4 text-sm">
@@ -21,11 +21,12 @@ const { title="Ozuna Construction", description="Professional Construction Servi
     </div>
   </header>
 
-  <main>
-    <slot />
-  </main>
+  <main><slot /></main>
 
-  <a href="https://wa.me/16149840351" class="fixed bottom-5 right-5 bg-green text-white px-4 py-2 rounded-full shadow-lg text-sm">WhatsApp</a>
+  <a href="https://wa.me/16149840351"
+     class="fixed bottom-5 right-5 bg-green text-white px-5 py-3 rounded-full shadow-lg text-sm font-semibold">
+     WhatsApp
+  </a>
 
   <script src="/app.js" defer></script>
 </body>
