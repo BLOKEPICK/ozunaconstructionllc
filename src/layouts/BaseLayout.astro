@@ -11,7 +11,7 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <meta name="description" content={description} />
 </head>
 <body class="bg-white text-gray-900 font-[var(--font-main)]">
-<header class="sticky top-0 bg-white/80 backdrop-blur-md border-b z-30">
+<header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur-md border-b z-50">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
 
     <!-- Logo -->
@@ -43,8 +43,6 @@ const { title="Ozuna Construction", description="Professional Construction Servi
 
     <!-- Mobile Actions -->
     <div class="flex sm:hidden items-center gap-2">
-
-      <!-- Lang Switch -->
       <button
         data-lang-switch
         class="px-2 py-1 rounded-full text-xs font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
@@ -52,11 +50,10 @@ const { title="Ozuna Construction", description="Professional Construction Servi
       >
         EN/ES
       </button>
-
-      <!-- Quote Icon -->
       <a 
         href="#quote"
         class="bg-indigo text-white w-9 h-9 flex items-center justify-center rounded-full shadow hover:bg-indigo/90 transition"
+        aria-label="Get a Quote"
       >
         📝
       </a>
@@ -65,25 +62,7 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   </div>
 </header>
 
-<!-- Smooth Scroll for Quote -->
-<script>
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-
-    const id = link.getAttribute("href").slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    e.preventDefault();
-
-    const headerOffset = 75;
-    const y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  });
-</script>
-
-<main><slot /></main>
+<main class="pt-16"><slot /></main>
 
 <a href="https://wa.me/16149840351"
   class="fixed bottom-5 right-5 bg-green text-white px-5 py-3 rounded-full shadow-xl font-semibold text-sm hover:bg-green/90 transition">

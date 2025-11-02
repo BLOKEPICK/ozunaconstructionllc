@@ -23,3 +23,8 @@
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+/* ✅ Offset so anchor scroll doesn't hide behind fixed header */
+html {
+  scroll-padding-top: 75px; /* same height as header */
+}
