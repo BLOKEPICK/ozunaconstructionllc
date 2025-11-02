@@ -11,32 +11,77 @@ const { title="Ozuna Construction", description="Professional Construction Servi
   <meta name="description" content={description} />
 </head>
 <body class="bg-white text-gray-900 font-[var(--font-main)]">
-<header class="sticky top-0 bg-white/80 backdrop-blur border-b z-30">
+<header class="sticky top-0 bg-white/80 backdrop-blur-md border-b z-30">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2">
-      <span class="text-indigo text-2xl">🏗️</span>
-      <span class="font-extrabold text-xl text-indigo tracking-wide">
+      <span class="text-indigo text-2xl md:text-3xl">🏗️</span>
+      <span class="font-extrabold text-lg md:text-xl text-indigo tracking-wide whitespace-nowrap">
         Ozuna Construction
       </span>
     </a>
 
-    <!-- Acciones -->
-    <div class="flex items-center gap-3">
+    <!-- Desktop Actions -->
+    <div class="hidden sm:flex items-center gap-3">
       <button
         data-lang-switch
         class="px-3 py-1.5 rounded-full text-sm font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
         data-i18n="lang_toggle"
-      >EN / ES</button>
+      >
+        EN / ES
+      </button>
 
       <a 
         href="#quote"
         class="px-4 py-2 rounded-full text-sm font-semibold bg-indigo text-white hover:bg-indigo/90 transition shadow-sm"
         data-i18n="btn_quote"
-      >Get a Quote</a>
+      >
+        Get a Quote
+      </a>
     </div>
+
+    <!-- Mobile Actions -->
+    <div class="flex sm:hidden items-center gap-2">
+
+      <!-- Lang Switch -->
+      <button
+        data-lang-switch
+        class="px-2 py-1 rounded-full text-xs font-medium text-gray-600 hover:text-white hover:bg-indigo transition"
+        data-i18n="lang_toggle"
+      >
+        EN/ES
+      </button>
+
+      <!-- Quote Icon -->
+      <a 
+        href="#quote"
+        class="bg-indigo text-white w-9 h-9 flex items-center justify-center rounded-full shadow hover:bg-indigo/90 transition"
+      >
+        📝
+      </a>
+    </div>
+
   </div>
 </header>
+
+<!-- Smooth Scroll for Quote -->
+<script>
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const id = link.getAttribute("href").slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerOffset = 75;
+    const y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  });
+</script>
 
 <main><slot /></main>
 
