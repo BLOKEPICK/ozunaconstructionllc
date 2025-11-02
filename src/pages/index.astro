@@ -78,66 +78,75 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <!-- WHY CHOOSE US -->
 <section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center animate-fadeIn">
+  <div class="max-w-6xl mx-auto px-6 animate-fadeIn">
 
-    <h2 class="text-3xl md:text-4xl font-bold text-indigo mb-6 t-en">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo mb-4 text-center t-en">
       Why Choose Us
     </h2>
-    <h2 class="text-3xl md:text-4xl font-bold text-indigo mb-6 t-es">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo mb-4 text-center t-es">
       Por Qué Elegirnos
     </h2>
 
-    <p class="text-gray-600 max-w-2xl mx-auto mb-14 t-en">
-      Delivering quality craftsmanship, honest pricing, and professional results for every project.
+    <p class="text-gray-600 max-w-2xl mx-auto text-center mb-12 t-en">
+      Experience, reliability, and craftsmanship you can trust.
     </p>
-    <p class="text-gray-600 max-w-2xl mx-auto mb-14 t-es">
-      Ofrecemos mano de obra de calidad, precios honestos y resultados profesionales en cada proyecto.
+    <p class="text-gray-600 max-w-2xl mx-auto text-center mb-12 t-es">
+      Experiencia, confiabilidad y calidad en cada proyecto.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="space-y-8">
 
-      <!-- Licensed & Insured -->
-      <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-        <div class="text-indigo text-4xl mb-4">🛡️</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Licensed & Insured</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Licenciados y Asegurados</h3>
-        <p class="text-gray-600 text-sm t-en">Your project is handled safely and professionally.</p>
-        <p class="text-gray-600 text-sm t-es">Tu proyecto está en manos seguras y profesionales.</p>
+      <!-- Item -->
+      <div class="flex items-start gap-4 p-5 rounded-lg bg-gray-50 border border-gray-200 hover:bg-white transition">
+        <div class="text-indigo text-4xl">🛡️</div>
+        <div>
+          <h3 class="font-semibold text-lg t-en">Licensed & Insured</h3>
+          <h3 class="font-semibold text-lg t-es">Licenciados y Asegurados</h3>
+          <p class="text-gray-600 text-sm t-en">Full protection and peace of mind.</p>
+          <p class="text-gray-600 text-sm t-es">Seguridad y tranquilidad garantizadas.</p>
+        </div>
       </div>
 
-      <!-- Quality Craftsmanship -->
-      <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-        <div class="text-indigo text-4xl mb-4">🧱</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Quality Craftsmanship</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Calidad en Cada Detalle</h3>
-        <p class="text-gray-600 text-sm t-en">We build with precision and pride in every finish.</p>
-        <p class="text-gray-600 text-sm t-es">Construimos con precisión y orgullo en cada detalle.</p>
+      <!-- Item -->
+      <div class="flex items-start gap-4 p-5 rounded-lg bg-gray-50 border border-gray-200 hover:bg-white transition">
+        <div class="text-indigo text-4xl">⭐</div>
+        <div>
+          <h3 class="font-semibold text-lg t-en">Quality Workmanship</h3>
+          <h3 class="font-semibold text-lg t-es">Alta Calidad</h3>
+          <p class="text-gray-600 text-sm t-en">Attention to detail in every job.</p>
+          <p class="text-gray-600 text-sm t-es">Atención al detalle en cada trabajo.</p>
+        </div>
       </div>
 
-      <!-- Fair Pricing -->
-      <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-        <div class="text-indigo text-4xl mb-4">💵</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Fair Pricing</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Precios Justos</h3>
-        <p class="text-gray-600 text-sm t-en">No surprises — honest and competitive pricing.</p>
-        <p class="text-gray-600 text-sm t-es">Sin sorpresas — precios honestos y competitivos.</p>
+      <!-- Item -->
+      <div class="flex items-start gap-4 p-5 rounded-lg bg-gray-50 border border-gray-200 hover:bg-white transition">
+        <div class="text-indigo text-4xl">⏱️</div>
+        <div>
+          <h3 class="font-semibold text-lg t-en">On-Time & Reliable</h3>
+          <h3 class="font-semibold text-lg t-es">Puntualidad y Confiabilidad</h3>
+          <p class="text-gray-600 text-sm t-en">We respect your schedule.</p>
+          <p class="text-gray-600 text-sm t-es">Respetamos tu tiempo.</p>
+        </div>
       </div>
 
-      <!-- On-Time & Reliable -->
-      <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-        <div class="text-indigo text-4xl mb-4">⏱️</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">On-Time & Reliable</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Puntualidad y Confiabilidad</h3>
-        <p class="text-gray-600 text-sm t-en">We respect your time and schedule.</p>
-        <p class="text-gray-600 text-sm t-es">Respetamos tu tiempo y tu agenda.</p>
+      <!-- Item -->
+      <div class="flex items-start gap-4 p-5 rounded-lg bg-gray-50 border border-gray-200 hover:bg-white transition">
+        <div class="text-indigo text-4xl">💰</div>
+        <div>
+          <h3 class="font-semibold text-lg t-en">Fair & Transparent Pricing</h3>
+          <h3 class="font-semibold text-lg t-es">Precios Claros & Justos</h3>
+          <p class="text-gray-600 text-sm t-en">No hidden fees, no surprises.</p>
+          <p class="text-gray-600 text-sm t-es">Sin costos ocultos ni sorpresas.</p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
+
 <!-- SERVICES -->
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-gray-100">
   <div class="max-w-6xl mx-auto px-6 text-center animate-fadeIn">
 
     <h2 class="text-3xl md:text-4xl font-bold text-indigo mb-6 t-en">
@@ -147,63 +156,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Nuestros Servicios
     </h2>
 
-    <p class="text-gray-600 max-w-2xl mx-auto mb-14 t-en">
-      We specialize in high-quality residential and commercial property improvement services.
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12 t-en">
+      We offer professional property improvement and cleaning services.
     </p>
-    <p class="text-gray-600 max-w-2xl mx-auto mb-14 t-es">
-      Nos especializamos en servicios de mejora de propiedades residenciales y comerciales.
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12 t-es">
+      Ofrecemos servicios profesionales de mejora y limpieza de propiedades.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
       <!-- Roofing -->
-      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition">
-        <div class="text-4xl text-indigo mb-4">🏠</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Roofing</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Techos</h3>
-        <p class="text-gray-600 text-sm mb-5 t-en">Roof replacement, repairs and installation.</p>
-        <p class="text-gray-600 text-sm mb-5 t-es">Reemplazo, reparación e instalación de techos.</p>
-        <a href="/services/roofing" class="text-indigo font-medium hover:underline t-en">View Details →</a>
-        <a href="/services/roofing" class="text-indigo font-medium hover:underline t-es">Ver Detalles →</a>
+      <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-indigo hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition">
+        <div class="text-4xl mb-4 text-indigo">🏠</div>
+        <h3 class="font-semibold text-lg mb-2 t-en">Roofing</h3>
+        <h3 class="font-semibold text-lg mb-2 t-es">Techos</h3>
+        <p class="text-gray-600 text-sm mb-4 t-en">Roof installation, repairs & replacement.</p>
+        <p class="text-gray-600 text-sm mb-4 t-es">Instalación, reparación y reemplazo de techos.</p>
+        <a href="/services/roofing" class="inline-block px-4 py-2 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
+          <span class="t-en">Learn More</span>
+          <span class="t-es">Más Info</span> →
+        </a>
       </div>
 
       <!-- Pressure Washing -->
-      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition">
-        <div class="text-4xl text-indigo mb-4">💧</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Pressure Washing</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Limpieza a Presión</h3>
-        <p class="text-gray-600 text-sm mb-5 t-en">Deep exterior cleaning for driveways, siding & more.</p>
-        <p class="text-gray-600 text-sm mb-5 t-es">Limpieza profunda para entradas, exteriores y más.</p>
-        <a href="/services/pressure-washing" class="text-indigo font-medium hover:underline t-en">View Details →</a>
-        <a href="/services/pressure-washing" class="text-indigo font-medium hover:underline t-es">Ver Detalles →</a>
+      <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-indigo hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition">
+        <div class="text-4xl mb-4 text-indigo">💧</div>
+        <h3 class="font-semibold text-lg mb-2 t-en">Pressure Washing</h3>
+        <h3 class="font-semibold text-lg mb-2 t-es">Limpieza a Presión</h3>
+        <p class="text-gray-600 text-sm mb-4 t-en">Deep cleaning for homes, driveways & siding.</p>
+        <p class="text-gray-600 text-sm mb-4 t-es">Limpieza profunda para casas, entradas y exteriores.</p>
+        <a href="/services/pressure-washing" class="inline-block px-4 py-2 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
+          <span class="t-en">Learn More</span>
+          <span class="t-es">Más Info</span> →
+        </a>
       </div>
 
       <!-- Remodeling -->
-      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition">
-        <div class="text-4xl text-indigo mb-4">🛠️</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Remodeling</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Remodelación</h3>
-        <p class="text-gray-600 text-sm mb-5 t-en">Full home, kitchen & bathroom remodeling.</p>
-        <p class="text-gray-600 text-sm mb-5 t-es">Remodelación completa, cocinas y baños.</p>
-        <a href="/services/remodeling" class="text-indigo font-medium hover:underline t-en">View Details →</a>
-        <a href="/services/remodeling" class="text-indigo font-medium hover:underline t-es">Ver Detalles →</a>
+      <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-indigo hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition">
+        <div class="text-4xl mb-4 text-indigo">🛠️</div>
+        <h3 class="font-semibold text-lg mb-2 t-en">Remodeling</h3>
+        <h3 class="font-semibold text-lg mb-2 t-es">Remodelación</h3>
+        <p class="text-gray-600 text-sm mb-4 t-en">Kitchen, bath, and full home remodeling.</p>
+        <p class="text-gray-600 text-sm mb-4 t-es">Cocinas, baños y remodelación completa del hogar.</p>
+        <a href="/services/remodeling" class="inline-block px-4 py-2 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
+          <span class="t-en">Learn More</span>
+          <span class="t-es">Más Info</span> →
+        </a>
       </div>
 
       <!-- Painting -->
-      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg border border-gray-200 transition">
-        <div class="text-4xl text-indigo mb-4">🎨</div>
-        <h3 class="text-lg font-semibold mb-2 t-en">Painting</h3>
-        <h3 class="text-lg font-semibold mb-2 t-es">Pintura</h3>
-        <p class="text-gray-600 text-sm mb-5 t-en">Interior & exterior professional painting services.</p>
-        <p class="text-gray-600 text-sm mb-5 t-es">Servicios profesionales de pintura interior y exterior.</p>
-        <a href="/services/painting" class="text-indigo font-medium hover:underline t-en">View Details →</a>
-        <a href="/services/painting" class="text-indigo font-medium hover:underline t-es">Ver Detalles →</a>
+      <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-indigo hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition">
+        <div class="text-4xl mb-4 text-indigo">🎨</div>
+        <h3 class="font-semibold text-lg mb-2 t-en">Painting</h3>
+        <h3 class="font-semibold text-lg mb-2 t-es">Pintura</h3>
+        <p class="text-gray-600 text-sm mb-4 t-en">Interior & exterior professional painting.</p>
+        <p class="text-gray-600 text-sm mb-4 t-es">Pintura interior y exterior profesional.</p>
+        <a href="/services/painting" class="inline-block px-4 py-2 bg-indigo text-white rounded-full text-sm font-medium hover:bg-indigo/90 transition">
+          <span class="t-en">Learn More</span>
+          <span class="t-es">Más Info</span> →
+        </a>
       </div>
 
     </div>
-
   </div>
 </section>
+
 
 
 
