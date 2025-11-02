@@ -223,7 +223,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </section>
 
 <!-- CTA + FORM -->
-<section class="py-20 bg-indigo text-white">
+<section class="py-20 bg-indigo text-white relative">
   <div class="max-w-5xl mx-auto px-6 text-center animate-fadeIn">
 
     <h2 class="text-3xl md:text-4xl font-bold mb-4 t-en">
@@ -251,12 +251,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- Contact Form -->
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white text-gray-800 p-8 rounded-xl shadow-lg">
 
-      <input type="text" placeholder="Your Name" class="p-3 rounded border border-gray-300 w-full" required />
-      <input type="tel" placeholder="Phone Number" class="p-3 rounded border border-gray-300 w-full" required />
+      <input type="text" placeholder="Your Name" required class="p-3 rounded border border-gray-300 w-full" />
+      <input type="tel" placeholder="Phone Number" required class="p-3 rounded border border-gray-300 w-full" />
 
-      <input type="text" placeholder="City / Area" class="p-3 rounded border border-gray-300 w-full md:col-span-2" />
+      <input type="text" placeholder="City / Area" required class="p-3 rounded border border-gray-300 w-full md:col-span-2" />
 
-      <textarea placeholder="Tell us about your project..." rows="4" class="p-3 rounded border border-gray-300 w-full md:col-span-2" required></textarea>
+      <textarea placeholder="Tell us about your project..." rows="4" required class="p-3 rounded border border-gray-300 w-full md:col-span-2"></textarea>
 
       <button class="md:col-span-2 bg-indigo text-white py-3 rounded font-semibold hover:bg-indigo/90 transition">
         Send Request
@@ -264,7 +264,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </form>
 
   </div>
+
+    <!-- COPYRIGHT + BUSINESS INFO -->
+  <div class="text-center text-white/70 text-sm mt-14 space-y-1">
+    <div>
+      © {new Date().getFullYear()} Ozuna Construction LLC. All Rights Reserved.
+    </div>
+    <div class="text-white/60 text-xs">
+      Licensed & Insured • Serving Columbus, OH and Surrounding Areas
+    </div>
+  </div>
 </section>
+
+
 
 
 
