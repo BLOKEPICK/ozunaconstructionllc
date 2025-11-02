@@ -1,12 +1,13 @@
----
-import BaseLayout from "../layouts/BaseLayout.astro";
----
-<BaseLayout>
 <section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
-  <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1600"
-       class="absolute inset-0 w-full h-full object-cover opacity-70"/>
+
+  <!-- NEW HERO IMAGE -->
+  <img src="/HeroOp.webp"
+       class="absolute inset-0 w-full h-full object-cover object-center opacity-80"/>
+
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-gray-900/60"></div>
 
+  <!-- Text -->
   <div class="relative z-10 text-center px-6 max-w-3xl">
     <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-en">
       Professional Construction & Remodeling Services
@@ -14,6 +15,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-es">
       Servicios Profesionales de Construcción & Remodelación
     </h1>
+
     <p class="text-gray-200 text-lg md:text-xl mb-8 t-en">
       Reliable, high-quality workmanship for residential and commercial projects.
     </p>
@@ -28,18 +30,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </div>
 </section>
-
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-indigo mb-10 t-en">Our Services</h2>
-    <h2 class="text-3xl font-bold text-center text-indigo mb-10 t-es">Nuestros Servicios</h2>
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-      <a href="/services/roofing" class="p-5 bg-gray-50 hover:shadow rounded-lg">🏠<div class="font-semibold mt-2">Roofing</div></a>
-      <a href="/services/framing" class="p-5 bg-gray-50 hover:shadow rounded-lg">🧱<div class="font-semibold mt-2">Framing</div></a>
-      <a href="/services/siding" class="p-5 bg-gray-50 hover:shadow rounded-lg">🪟<div class="font-semibold mt-2">Siding</div></a>
-      <a href="/services/carpentry" class="p-5 bg-gray-50 hover:shadow rounded-lg">🪚<div class="font-semibold mt-2">Carpentry</div></a>
-      <a href="/services/remodeling" class="p-5 bg-gray-50 hover:shadow rounded-lg">🛠️<div class="font-semibold mt-2">Remodeling</div></a>
-    </div>
-  </div>
-</section>
-</BaseLayout>
