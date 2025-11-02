@@ -145,55 +145,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="py-16 bg-indigo text-white">
-  <div class="max-w-6xl mx-auto px-6 text-center animate-fadeIn">
-
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 t-en">
-      Ready To Start Your Project?
-    </h2>
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 t-es">
-      ¿Listo Para Comenzar Tu Proyecto?
-    </h2>
-
-    <p class="text-white/90 max-w-2xl mx-auto mb-8 t-en">
-      Contact us today for a free estimate. Fast response, professional service & guaranteed satisfaction.
-    </p>
-    <p class="text-white/90 max-w-2xl mx-auto mb-8 t-es">
-      Contáctanos para una cotización gratis. Respuesta rápida, servicio profesional y satisfacción garantizada.
-    </p>
-
-    <div class="flex flex-wrap justify-center gap-4">
-
-      <a 
-        href="#quote"
-        class="px-8 py-3 rounded-full bg-white text-indigo font-semibold text-base hover:bg-gray-100 transition"
-        data-i18n="btn_quote"
-      >
-        📝 Free Estimate
-      </a>
-
-      <a 
-        href="tel:+16149840351"
-        class="px-8 py-3 rounded-full bg-indigo/30 border border-white text-white font-semibold text-base hover:bg-indigo/20 transition"
-        data-i18n="btn_call"
-      >
-        📞 Call Now
-      </a>
-
-      <a 
-        href="https://wa.me/16149840351"
-        class="px-8 py-3 rounded-full bg-green text-white font-semibold text-base hover:bg-green/90 transition"
-        data-i18n="btn_whatsapp"
-      >
-        💬 WhatsApp
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
 
 <!-- SERVICES -->
 <section class="py-20 bg-gray-100">
@@ -268,6 +219,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<section class="py-20 bg-indigo text-white">
+  <div class="max-w-5xl mx-auto px-6 text-center animate-fadeIn">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 t-en">
+      Ready To Get Started?
+    </h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 t-es">
+      ¿Listo Para Comenzar?
+    </h2>
+
+    <p class="text-white/90 max-w-2xl mx-auto mb-10 t-en">
+      Call us or request a free estimate using the form below.
+    </p>
+    <p class="text-white/90 max-w-2xl mx-auto mb-10 t-es">
+      Llámanos o solicita una cotización gratis usando el formulario.
+    </p>
+
+    <!-- Call Button -->
+    <a 
+      href="tel:+16149840351"
+      class="inline-block mb-10 px-10 py-3 rounded-full bg-white text-indigo font-semibold text-lg hover:bg-gray-100 transition"
+    >
+      📞 Call Now
+    </a>
+
+    <!-- Contact Form -->
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+
+      <input type="text" placeholder="Your Name" class="p-3 rounded border border-gray-300 w-full" required />
+      <input type="tel" placeholder="Phone Number" class="p-3 rounded border border-gray-300 w-full" required />
+
+      <input type="text" placeholder="City / Area" class="p-3 rounded border border-gray-300 w-full md:col-span-2" />
+
+      <textarea placeholder="Tell us about your project..." rows="4" class="p-3 rounded border border-gray-300 w-full md:col-span-2" required></textarea>
+
+      <button class="md:col-span-2 bg-indigo text-white py-3 rounded font-semibold hover:bg-indigo/90 transition">
+        Send Request
+      </button>
+    </form>
+
   </div>
 </section>
 
