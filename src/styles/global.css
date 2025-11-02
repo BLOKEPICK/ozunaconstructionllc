@@ -1,12 +1,12 @@
-/* ✅ Importamos la fuente bien (sin romper Tailwind build) */
+/* Fuente corporativa */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* ✅ Tailwind core */
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ✅ Usaremos una variable para aplicar la fuente en el body via clase Tailwind */
+/* Variable para usar la fuente vía clase de Tailwind */
 :root {
   --font-main: 'Montserrat', sans-serif;
 }
