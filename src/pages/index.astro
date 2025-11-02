@@ -4,15 +4,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
 <section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
 
-  <!-- Hero image with fallback -->
+  <!-- Hero image (tu imagen local) -->
   <img 
     src="/HeroOp.webp"
-    onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600'"
-    class="absolute inset-0 w-full h-full object-cover object-center"
+    alt="Construction Hero Image"
+    class="absolute inset-0 w-full h-full object-cover object-center opacity-90"
   />
 
-  <!-- Overlay gradient for pro look -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+  <!-- Overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
 
   <!-- Content -->
   <div class="relative z-10 text-center px-6 max-w-3xl">
