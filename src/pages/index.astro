@@ -3,20 +3,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout>
 <section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
-  <img src="/HeroOp.webp" class="absolute inset-0 w-full h-full object-cover object-center opacity-80"/>
-  <div class="absolute inset-0 bg-gray-900/60"></div>
 
+  <!-- Hero image with fallback -->
+  <img 
+    src="/HeroOp.webp"
+    onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600'"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+  />
+
+  <!-- Overlay gradient for pro look -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+
+  <!-- Content -->
   <div class="relative z-10 text-center px-6 max-w-3xl">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-en">Professional Construction & Remodeling Services</h1>
-    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 t-es">Servicios Profesionales de Construcción & Remodelación</h1>
-    <p class="text-gray-200 text-lg md:text-xl mb-8 t-en">Reliable, high-quality workmanship for residential and commercial projects.</p>
-    <p class="text-gray-200 text-lg md:text-xl mb-8 t-es">Mano de obra confiable y de alta calidad para proyectos residenciales y comerciales.</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 t-en">
+      Trusted Construction & Remodeling Experts
+    </h1>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 t-es">
+      Expertos Confiables en Construcción & Remodelación
+    </h1>
+
+    <p class="text-gray-200 text-lg md:text-2xl mb-8 font-medium t-en">
+      High-quality workmanship for residential & commercial projects.
+    </p>
+    <p class="text-gray-200 text-lg md:text-2xl mb-8 font-medium t-es">
+      Mano de obra de alta calidad para proyectos residenciales y comerciales.
+    </p>
 
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="tel:+16149840351" class="bg-indigo hover:bg-indigo/90 text-white px-6 py-3 rounded-full text-sm font-semibold">📞 Call Us</a>
-      <a href="https://wa.me/16149840351" class="bg-green hover:bg-green/90 text-white px-6 py-3 rounded-full text-sm font-semibold">💬 WhatsApp</a>
-      <a href="/services/roofing" class="bg-white text-indigo border border-white hover:bg-gray-100 px-6 py-3 rounded-full text-sm font-semibold">🏗️ Our Services</a>
+      <a href="tel:+16149840351" class="bg-indigo hover:bg-indigo/80 text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg">
+        📞 Call Now
+      </a>
+      <a href="https://wa.me/16149840351" class="bg-green hover:bg-green/80 text-white px-8 py-3 rounded-full text-base font-semibold shadow-lg">
+        💬 WhatsApp
+      </a>
+      <a href="/services/roofing" class="bg-white text-indigo hover:bg-gray-100 px-8 py-3 rounded-full text-base font-semibold shadow-lg">
+        🛠️ View Services
+      </a>
     </div>
   </div>
+
 </section>
 </BaseLayout>
