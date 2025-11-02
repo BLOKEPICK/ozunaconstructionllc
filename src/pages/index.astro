@@ -1,80 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Ozuna Construction">
-  <section class="hero">
-    <div class="container">
-      <span class="badge t-en">Licensed & Insured</span>
-      <span class="badge t-es">Licenciados & Asegurados</span>
-      <h1>
-        <span class="t-en">Professional Construction & Remodeling Services</span>
-        <span class="t-es">Servicios Profesionales de Construcción y Remodelación</span>
-      </h1>
-      <p>
-        <span class="t-en">Quality craftsmanship, honest service. Your trusted construction partner in Ohio.</span>
-        <span class="t-es">Trabajo de calidad y servicio honesto. Tu socio de construcción de confianza en Ohio.</span>
-      </p>
-      <div class="cta-bar">
-        <a href="tel:+16149840351" class="btn btn-primary t-en">Call Now</a>
-        <a href="tel:+16149840351" class="btn btn-primary t-es">Llamar Ahora</a>
-        <a href="https://wa.me/16149840351" target="_blank" class="btn btn-green t-en">WhatsApp</a>
-        <a href="https://wa.me/16149840351" target="_blank" class="btn btn-green t-es">WhatsApp</a>
-        <a href="/contact" class="btn btn-outline t-en">Free Estimate</a>
-        <a href="/contact" class="btn btn-outline t-es">Cotización Gratis</a>
-      </div>
-    </div>
-  </section>
+<BaseLayout>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h1 class="text-4xl font-bold text-indigo mb-4 t-en">Construction & Remodeling in Ohio</h1>
+    <h1 class="text-4xl font-bold text-indigo mb-4 t-es">Construcción & Remodelación en Ohio</h1>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="t-en">What We Do</h2>
-      <h2 class="t-es">Qué Hacemos</h2>
-      <div class="grid grid-5 services">
-        <a class="card" href="/services/roofing">
-          <div class="service-icon">🏠</div>
-          <h3>Roofing</h3>
-          <p class="t-en">New roofs, repairs, replacements.</p>
-          <p class="t-es">Nuevos techos, reparaciones, reemplazos.</p>
-        </a>
-        <a class="card" href="/services/siding">
-          <div class="service-icon">🪟</div>
-          <h3>Siding</h3>
-          <p class="t-en">Vinyl, fiber cement, wood.</p>
-          <p class="t-es">Vinilo, fibrocemento, madera.</p>
-        </a>
-        <a class="card" href="/services/framing">
-          <div class="service-icon">🧱</div>
-          <h3>Framing</h3>
-          <p class="t-en">Structural framing, additions.</p>
-          <p class="t-es">Estructuras y ampliaciones.</p>
-        </a>
-        <a class="card" href="/services/carpentry">
-          <div class="service-icon">🪚</div>
-          <h3>Carpentry</h3>
-          <p class="t-en">Trim, decks, custom work.</p>
-          <p class="t-es">Acabados, decks, trabajos a medida.</p>
-        </a>
-        <a class="card" href="/services/remodeling">
-          <div class="service-icon">🛠</div>
-          <h3>Remodeling</h3>
-          <p class="t-en">Kitchens, bathrooms, basements.</p>
-          <p class="t-es">Cocinas, baños, sótanos.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-8 t-en">
+      Quality work. Trusted by homeowners and businesses.
+    </p>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-8 t-es">
+      Trabajo de calidad. Confiable para hogares y negocios.
+    </p>
 
-  <section class="section" style="background:var(--soft)">
-    <div class="container">
-      <h2 class="t-en">Why Choose Us</h2>
-      <h2 class="t-es">Por Qué Elegirnos</h2>
-      <div class="grid grid-5">
-        <div class="card">✅ <span class="t-en">Licensed & Insured</span><span class="t-es">Licenciados & Asegurados</span></div>
-        <div class="card">✅ <span class="t-en">Affordable & Fast</span><span class="t-es">Rápidos & Asequibles</span></div>
-        <div class="card">✅ <span class="t-en">Experienced Crew</span><span class="t-es">Equipo con Experiencia</span></div>
-        <div class="card">✅ <span class="t-en">Free Estimates</span><span class="t-es">Cotizaciones Gratis</span></div>
-        <div class="card">✅ <span class="t-en">Quality Craftsmanship</span><span class="t-es">Trabajo de Calidad</span></div>
-      </div>
+    <div class="flex gap-4 justify-center">
+      <a class="bg-indigo text-white px-6 py-3 rounded-full text-sm" href="tel:+16149840351">Call</a>
+      <a class="bg-green text-white px-6 py-3 rounded-full text-sm" href="https://wa.me/16149840351" target="_blank">WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
 </BaseLayout>

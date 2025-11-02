@@ -1,31 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const title = "Roofing | Ozuna Construction";
 ---
-<BaseLayout title={title}>
-  <section class="section">
-    <div class="container">
-      <h2 class="t-en">Roofing</h2>
-      <h2 class="t-es">Techos</h2>
-      <p class="t-en">Professional roofing services you can trust.</p>
-      <p class="t-es">Servicios profesionales de roofing en los que puedes confiar.</p>
-      <div class="row" style="gap:22px;align-items:flex-start">
-        <div class="card" style="flex:1;min-width:260px">
-          <h3 class="t-en">What we offer</h3>
-          <h3 class="t-es">Qué ofrecemos</h3>
-          <ul class="t-en"><li>• New roof installation</li><li>• Repairs & replacements</li><li>• Shingle, metal, flat</li></ul>
-          <ul class="t-es"><li>• Instalación de techos nuevos</li><li>• Reparaciones y reemplazos</li><li>• Shingle, metal, planos</li></ul>
-          <div class="space"></div>
-          <a href="/contact" class="btn btn-primary t-en">Get a Free Estimate</a>
-          <a href="/contact" class="btn btn-primary t-es">Pide una Cotización</a>
-        </div>
-        <div class="gallery" style="flex:2">
-          <div class="img"><img src="/roofing-placeholder.svg" alt="Roofing photo"/></div>
-          <div class="img"><img src="/roofing-placeholder.svg" alt="Roofing photo"/></div>
-          <div class="img"><img src="/roofing-placeholder.svg" alt="Roofing photo"/></div>
-          <div class="img"><img src="/roofing-placeholder.svg" alt="Roofing photo"/></div>
-        </div>
-      </div>
+<BaseLayout>
+<section class="py-14">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-indigo mb-6">Roofing</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div><div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg"></div></div>
+      <p class="text-gray-700 leading-relaxed t-en">Professional roofing service.</p>
+      <p class="text-gray-700 leading-relaxed t-es">Servicio profesional de roofing.</p>
     </div>
-  </section>
+  </div>
+</section>
 </BaseLayout>

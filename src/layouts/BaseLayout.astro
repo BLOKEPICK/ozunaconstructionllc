@@ -1,45 +1,32 @@
 ---
-export interface Props {
-  title?: string;
-  description?: string;
-}
-const {{ title = 'Ozuna Construction', description = 'Professional Construction & Remodeling Services' }} = Astro.props;
+export interface Props { title?: string; description?: string }
+const { title="Ozuna Construction", description="Professional Construction Services" } = Astro.props;
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{title}}</title>
-    <meta name="description" content={{description}} />
-    <link rel="stylesheet" href="/src/styles/styles.css">
-  </head>
-  <body>
-    <header>
-      <div class="container nav">
-        <div class="logo">Ozuna Construction</div>
-        <nav class="row" style="gap:10px">
-          <a class="switcher" href="#" data-lang-switch>Español / English</a>
-          <a class="switcher" href="tel:+16149840351">📞 (614) 984-0351</a>
-          <a class="switcher" href="mailto:ozunaconstructionllc@gmail.com">✉️ Email</a>
-        </nav>
+<html lang="en" class="bg-white text-gray-900">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="stylesheet" href="/src/styles/global.css">
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 bg-white border-b border-gray-200 z-30">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold text-indigo text-lg">Ozuna Construction</a>
+      <div class="flex gap-4 text-sm">
+        <button data-lang-switch class="text-gray-600 hover:text-indigo">Español / English</button>
+        <a href="tel:+16149840351" class="text-gray-600 hover:text-indigo">📞 (614) 984-0351</a>
       </div>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <div class="container">
-        <div class="row" style="justify-content:space-between;align-items:center">
-          <div>© {{new Date().getFullYear()}} Ozuna Construction · <span class="t-en">Serving Ohio</span><span class="t-es">Sirviendo Ohio</span></div>
-          <div class="row">
-            <a href="tel:+16149840351" class="badge">📞 (614) 984-0351</a>
-            <a href="https://wa.me/16149840351" class="badge">💬 WhatsApp</a>
-            <a href="mailto:ozunaconstructionllc@gmail.com" class="badge">✉️ ozunaconstructionllc@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <a class="float-whatsapp btn btn-green" href="https://wa.me/16149840351" target="_blank" rel="noopener">WhatsApp</a>
-    <script src="/app.js" defer></script>
-  </body>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <a href="https://wa.me/16149840351" class="fixed bottom-5 right-5 bg-green text-white px-4 py-2 rounded-full shadow-lg text-sm">WhatsApp</a>
+
+  <script src="/app.js" defer></script>
+</body>
 </html>

@@ -1,6 +1,6 @@
 {
-  "name": "ozuna-construction",
-  "version": "0.1.0",
+  "name": "ozuna-construction-tailwind",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,6 +9,10 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.12.0"
+    "astro": "^4.12.0",
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/aspect-ratio": "^0.4.2"
   }
 }
